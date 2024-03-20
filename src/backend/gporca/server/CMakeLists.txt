@@ -58,7 +58,7 @@ NestedInSubqWithPrjListOuterRefNoInnerRef  InEqualityJoin Correlated-SemiJoin
 CorrelatedSemiJoin-True CorrelatedIN-LeftSemiJoin-True CorrelatedIN-LeftSemiNotIn-True
 InSubqWithPrjListOuterRefNoInnerRefColumnPlusConstIn CorrelatedIN-LeftSemiJoin-Limit
 CorrelatedLeftSemiNLJoinWithLimit PushFilterToSemiJoinLeftChild SubqOuterReferenceInClause
-SemiJoinDPE InSubqWithPrjListReturnSet LeftSemiJoinWithRepOuterTab;
+SemiJoinDPE InSubqWithPrjListReturnSet LeftSemiJoinWithRepOuterTab LeftSemiJoinCE;
 
 CAntiSemiJoinTest:
 AntiSemiJoin2Select-1 AntiSemiJoin2Select-2 NOT-IN-NotNullBoth NOT-IN-NullInner NOT-IN-NullOuter
@@ -421,7 +421,10 @@ Hint-BitmapScan-Over-Table Hint-NoBitmapScan-Over-Table
 Hint-AbsoluteRows-Over-Join Hint-AddRows-Over-Join Hint-SubtractRows-Over-Join Hint-MultiplyRows-Over-Join;
 
 CForeignPartTest:
-ForeignPartUniform PartForeignMixed PartForeignDifferentServer PartForeignDifferentExecLocation PartForeignMixedDPE PartForeignMixedSPE PartForeignUniformSPE ForeignScanExecLocAnySimpleScan ForeignScanExecLocAnyJoin ForeignPartOneTimeFilterDPE
+ForeignPartUniform PartForeignMixed PartForeignDifferentServer PartForeignDifferentExecLocation PartForeignMixedDPE PartForeignMixedSPE PartForeignUniformSPE ForeignScanExecLocAnySimpleScan ForeignScanExecLocAnyJoin ForeignPartOneTimeFilterDPE;
+
+CCardinalityTest:
+SystemColCtidStats SystemColSegIdStats
 ")
 
 set(mdp_dir "../data/dxl/minidump/")
