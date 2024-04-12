@@ -2139,8 +2139,8 @@ CTranslatorRelcacheToDXL::GenerateStatsForSystemCols(
 			{
 				is_col_stats_missing = false;
 				freq_remaining = CDouble(1.0);
-                distinct_remaining = CDouble(
-                        md_rel->IsPartitioned() ? md_rel->PartColumnCount() : 1);
+				distinct_remaining = CDouble(
+					md_rel->IsPartitioned() ? md_rel->PartColumnCount() : 1);
 				break;
 			}
 			case SelfItemPointerAttributeNumber:  // ctid
